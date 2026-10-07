@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Complaint Details</title>
+</head>
+<body>
+
+    <h1>Complaint Details</h1>
+
+    <p>
+        <strong>Name:</strong>
+        {{ complaint.name }}
+    </p>
+
+    <p>
+        <strong>Location:</strong>
+        {{ complaint.location }}
+    </p>
+
+    <p>
+        <strong>Problem:</strong>
+        {{ complaint.problem }}
+    </p>
+
+    <p>
+        <strong>Description:</strong>
+        {{ complaint.description }}
+    </p>
+
+    <p>
+        <strong>Status:</strong>
+        {{ complaint.status }}
+    </p>
+
+    <p>
+        <strong>Date Reported:</strong>
+        {{ complaint.date_reported }}
+    </p>
+
+    <br>
+
+    <a href="{% url 'complaint_list' %}">
+        Back to Complaints
+    </a>
+
+</body>
+</html>

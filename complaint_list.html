@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Road Complaints</title>
+</head>
+<body>
+
+    <h1>Road Complaints</h1>
+
+    <a href="{% url 'add_complaint' %}">
+        Report New Problem
+    </a>
+
+    <br><br>
+
+    {% for complaint in complaints %}
+
+        <hr>
+
+        <h3>{{ complaint.problem }}</h3>
+
+        <p>
+            <strong>Location:</strong>
+            {{ complaint.location }}
+        </p>
+
+        <p>
+            <strong>Reported by:</strong>
+            {{ complaint.name }}
+        </p>
+
+        <p>
+            <strong>Status:</strong>
+            {{ complaint.status }}
+        </p>
+
+        <a href="{% url 'complaint_detail' complaint.id %}">
+            View Details
+        </a>
+
+        |
+
+        <a href="{% url 'delete_complaint' complaint.id %}">
+            Delete
+        </a>
+
+    {% empty %}
+
+        <p>No complaints available.</p>
+
+    {% endfor %}
+
+    <br><br>
+
+    <a href="{% url 'home' %}">Home</a>
+
+</body>
+</html>
